@@ -12,3 +12,7 @@ class Habit:
     def mark(self, day=None):
         """Отмечает выполнение за день (по умолчанию — сегодня)."""
         self.done_days.add(day or date.today())
+
+    def unmark(self, day):
+        """Снимает отметку за день."""
+        self.done_days.discard(day)
